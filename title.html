@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="app_styles.css">
+    
     <style>
     #view-source {
       position: fixed;
@@ -65,10 +66,32 @@
   background: url("material-design-background.jpg") center / cover;
 }
 
+#loading{
+ 
+  
+  top:47.5vh;
+  display: block;
+  position: absolute;
+  margin-left: 45%;
+  margin-right: auto;
+  z-index: 99;
+  
+}
 
     </style>
   </head>
   <body>
+   
+  
+  <!-- .gif spinner -->
+  
+  <div id="loading" style="">
+    <img id="loading-image" style="height: 50px;" src="loading.gif" alt="Loading..." />
+  </div>
+
+    
+    
+    
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600" style="height: 10%;">
         <div class="mdl-layout__header-row">
@@ -145,7 +168,7 @@
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
       </div>
-      <main class="mdl-layout__content mdl-color--grey-100">
+      <main id="mainContent" class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
            
@@ -276,9 +299,28 @@
         </defs>
       </svg>
       <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/dashboard/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp"> <i class="material-icons">add</i></a>
+  
+   
+  <script language="javascript" type="text/javascript">
+  //window.onload = function(){ document.getElementById("loading").style.display = "none" }
+  document.getElementById("mainContent").style.display = "none";
+  document.getElementById("view-source").style.display = "none";
+  
+  
+  setTimeout(function() {
+document.getElementById("loading").style.display = "none";
+  document.getElementById("mainContent").style.display = "";
+  document.getElementById("view-source").style.display = "";
+}, 1500);
+  
+
+
+  </script>  
+    
+    
+       
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     
-    
-      
+
   </body>
 </html>
