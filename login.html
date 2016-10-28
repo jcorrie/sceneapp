@@ -3,7 +3,7 @@
 https://github.com/Team-Code/KA_Offline -->
 <html> 
  <head>
-      <title>Scene - Login</title> 
+    <title>Scene - Login</title> 
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
@@ -23,7 +23,8 @@ https://github.com/Team-Code/KA_Offline -->
     <meta name="msapplication-TileImage" content="scene_logo.png">
     <meta name="msapplication-TileColor" content="#3372DF">
 
-    <link rel="shortcut icon" href="images/favicon.png"> 
+    <link rel="shortcut icon" href="images/favicon.png">   
+    
   <style>
 
 
@@ -39,6 +40,7 @@ body {
   max-width: 800px;
   height: 60vh;
   max-height: 600px;
+  
 
     margin-left: auto;
     margin-right: auto;
@@ -97,31 +99,33 @@ body {
            position:absolute;">
                 
                 
-                 
-                  <form action="#" style="">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="display: block;align: center;height: 40%; margin-left: auto; margin-right: auto;">
-                    <input class="mdl-textfield__input" type="text" id="sample3">
-                    <label class="mdl-textfield__label" for="sample3">Username</label>
-                  </div>
-                </form>
-                
-                  <form action="#">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style=" display: block;align: center; margin-left: auto; margin-right: auto;">
-                    <input class="mdl-textfield__input" type="text" id="sample3">
-                    <label class="mdl-textfield__label" for="sample3">Password</label>
-                  </div>
-                </form>
-                  <div class="mdl-card__actions mdl-card--border">
-                    <a href="title.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style=" display: block;align: center; margin-left: auto; margin-right: auto; font-size: 18px;">
-                      Login
-                    </a>
-                  </div>
-                  
+                 <div style="height: 50%; display: block;">
+                        <div style="display: inline;margin-top: 3%; margin-bottom: 3%;">
+                        <form action="#" style="">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="display: block;align: center;height: 40%; margin-left: auto; margin-right: auto;">
+                          <input class="mdl-textfield__input" type="text" id="sample3">
+                          <label class="mdl-textfield__label" style= "font-size: 18px;" for="sample3">Username</label>
+                        </div>
+                      </form>
+                      
+                        <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style=" display: block;align: center; margin-left: auto; margin-right: auto;">
+                          <input class="mdl-textfield__input" type="text" id="sample3">
+                          <label class="mdl-textfield__label" style= "font-size: 18px;" for="sample3">Password</label>
+                        </div>
+                      </form>
+                      </div>
+                  </div>                
                   <!-- Colored FAB button with ripple -->
+                <div style="height: 50%;">
+                        <div class="mdl-card__actions mdl-card--border" style="height: 50%">
+                          <a href="title.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style=" display: block;align: center; padding-top: 3%; padding-bottom: 3%; margin-left: auto; margin-right: auto; font-size: 18px;">
+                            Login
+                          </a>
+                        </div>        
                 
                 
-                
-                 <button id="show-dialog" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                 <button id="show-dialog" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="display:block;">
                   <i class="material-icons">add</i>
                 </button>
             <dialog class="mdl-dialog">
@@ -144,6 +148,8 @@ body {
                       Sign Up
                     </a>
                   </div>
+                  
+              
             </dialog>
             <script>
               var dialog = document.querySelector('dialog');
