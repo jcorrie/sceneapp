@@ -35,19 +35,6 @@ body {
 .body {
   height: 100vh;
 }
-.demo-card-square.mdl-card {
-  width: 90%;
-  max-width: 800px;
-  height: 60vh;
-  max-height: 600px;
-  
-
-    margin-left: auto;
-    margin-right: auto;
-
-  
-}
-
 
   
 .demo-card-square > .mdl-card__title {
@@ -72,6 +59,8 @@ body {
 
 <body>
 
+
+
   <div>
           <div style="display: block; height: 100vh">  
             <div  style="height: 20vh; padding-top: 10vh; padding-bottom: 5vh;">
@@ -93,7 +82,7 @@ body {
           
           -->
             <div style=" height:65vh; position:relative;">
-                <div class="demo-card-square mdl-card mdl-shadow--2dp" style=" top: 50%;
+                <div class="demo-card-square mdl-card mdl-shadow--2dp" id="loginCard" style="height: 70%; top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
            position:absolute;">
@@ -117,19 +106,19 @@ body {
                       </div>
                   </div>                
                   <!-- Colored FAB button with ripple -->
-                <div style="height: 50%;">
-                        <div class="mdl-card__actions mdl-card--border" style="height: 50%">
-                          <a href="title.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style=" display: block;align: center; padding-top: 3%; padding-bottom: 3%; margin-left: auto; margin-right: auto; font-size: 18px;">
+                <div style="display: block; height: 50%; vertical-align: middle;">
+                        <div class="mdl-card__actions mdl-card--border" style=" height:; padding-top: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; vertical-align: middle;">
+                          <a href="title.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="display: block;align: center; height: 100%; margin-top: 1.5%; font-size: 18px;">
                             Login
                           </a>
                         </div>        
                 
                 
-                 <button id="show-dialog" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="display:block;">
-                  <i class="material-icons">add</i>
+                 <button id="show-dialog" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="display:block; top: 6%;">
+                  <i class="material-icons" style="">add</i>
                 </button>
-            <dialog class="mdl-dialog">
-              <h1 class="mdl-dialog__title" style="padding-left: 0px; padding-top: 1px; padding-bottom: 10px; font-size: 18px;">Don't have an account?</h1><p class="mdl-dialog__text"> Be Scene.</p>
+            <dialog id="dialogBox" class="mdl-dialog">
+              <h1 class="mdl-dialog__title" style="padding-left: 0px;  font-size: 18px;">Don't have an account?</h1><p class="mdl-dialog__text"> Be Scene.</p>
             <form action="#" style="">
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="display: block;align: center;height: 40%; margin-left: auto; margin-right: auto;">
                     <input class="mdl-textfield__input" type="text" id="sample3">
@@ -175,9 +164,45 @@ body {
                 
     
         </div>
+        
+ <script language="javascript" type="text/javascript">
+ 
+ function resize() {
+ 
+
+         if (window.innerWidth > 450+(450-0.9*450)){
+          document.getElementById("loginCard").style.width = "450px";
+ 
+          console.log("500px");
+        } else {
+          
+          document.getElementById("loginCard").style.width = "90vw";
       
-    
-      
+          console.log("80vw");
+          
+        }
+        
+        if (window.innerWidth < 400){
+          
+          document.getElementById("dialogBox").style.width = "80vw";
+        }else {
+          
+          document.getElementById("dialogBox").style.width = "";
+        }
+        
+        
+        
+        
+
+}
+
+
+window.onresize = resize;
+window.onload = resize;
+  
+</script>
+        <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+ </div>     
  </body>
  
   
