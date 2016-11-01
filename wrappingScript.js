@@ -1,27 +1,10 @@
 
+
               //Script for snackbar 
               
-              (function() {
-                          'use strict';
-                          var snackbarContainer = document.querySelector('#demo-snackbar-example');
-                          var showSnackbarButton = document.querySelector('#view-source');
-                          var handler = function(event) {
-                            showSnackbarButton.style.backgroundColor = '';
-                          };
-                          showSnackbarButton.addEventListener('click', function() {
-                            'use strict';
-                            showSnackbarButton.style.backgroundColor = '#' +
-                                Math.floor(Math.random() * 0xFFFFFF).toString(16);
-                            var data = {
-                              message: "Keep clicking...",
-                              timeout: 2000,
-                              actionHandler: handler,
-                              actionText: 'me'
-                            };
-                            snackbarContainer.MaterialSnackbar.showSnackbar(data);
-                          });
-                        }());
+
   //window.onload = function(){ document.getElementById("loading").style.display = "none" }
+  
   document.getElementById("mainContent").style.display = "none";
   document.getElementById("view-source").style.display = "none";
   
@@ -51,7 +34,7 @@ document.getElementById("loading").style.display = "none";
       
         // Creating the "about us" pop up
     var dialog = document.querySelector('dialog');
-    var showDialogButton = document.querySelector('#show-dialog');
+    var showDialogButton = document.querySelector('#show-help');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
     }
@@ -63,6 +46,26 @@ document.getElementById("loading").style.display = "none";
       
      
     });
+    
+                  (function() {
+                          'use strict';
+                          var snackbarContainer = document.querySelector('#demo-snackbar-example');
+                          var showSnackbarButton = document.querySelector('#show-help');
+                          var handler = function(event) {
+                            showSnackbarButton.style.backgroundColor = '';
+                          };
+                          dialog.addEventListener('click', function() {
+                            'use strict';
+                          
+                            var data = {
+                              message: "Keep clicking...",
+                              timeout: 2000,
+                              actionHandler: handler,
+                              actionText: 'me'
+                            };
+                            snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                          });
+                        }());
     
     var darkenIcon = document.getElementById("darkenIcon");
    var originClass = darkenIcon.className;
@@ -91,14 +94,84 @@ document.getElementById("loading").style.display = "none";
       darkenIcon.className = originClass;f
    }     
     
+/*
 
+ $(document).ready(function(){
+        
+        $("#mainContent").load("/title.main.html");
+        $("#floatingButton").load("/title.floater.html");
+        
+          $("#theFeed").click(function() {
+            
+            $("#mainContent").load("/title.main.html")
+            $("#floatingButton").load("/title.floater.html");
+            
+            $(".mdl-navigation__link").removeClass("mdl-shadow--6dp");
+            $( this ).addClass( "mdl-shadow--6dp" );
+          });  
+            
+          $("#theInbox").click(function(){
+            
+           $('#mainContent').load('/inbox.main.html');
+           $("#floatingButton").load("/inbox.floater.html");
+           
+           
+              document.getElementById("mainContent").style.display = "none";
+  document.getElementById("view-source").style.display = "none";
+  
+  
+            setTimeout(function() {
+          document.getElementById("loading").style.display = "none";
+            document.getElementById("mainContent").style.display = "";
+            document.getElementById("view-source").style.display = "";
+          }, 1500);
+           
+            $(".mdl-navigation__link").removeClass("mdl-shadow--6dp");
+            $( this ).addClass( "mdl-shadow--6dp" );
+          });
+          
+          
+          $("#theYou").click(function(){
+            
+            $('#mainContent').load('/profile.main.html');
+            $("#floatingButton").load("/profile.floater.html");
+              $(".mdl-navigation__link").removeClass("mdl-shadow--6dp");
+            $( this ).addClass( "mdl-shadow--6dp" );
+          });
+          
+
+          $("#theGigs").click(function(){
+            
+           $('#mainContent').load('/your_gigs.main.html');
+           $('#floatingButton').load('/your_gigs.floater.html');
+            $(".mdl-navigation__link").removeClass("mdl-shadow--6dp");
+            $( this ).addClass( "mdl-shadow--6dp" );
+          
+          });
+          
+          $("#theCommunity").click(function(){
+            
+           $('#mainContent').load('/community.main.html');
+           $('#floatingButton').load('/community.floater.html');
+             $(".mdl-navigation__link").removeClass("mdl-shadow--6dp");
+            $( this ).addClass( "mdl-shadow--6dp" );
+          
+          });
+          
+          $("#theSettings").click(function(){
+            
+            $('#mainContent').load('/settings.main.html');
+            $('#floatingButton').load('/settings.floater.html');
+            $(".mdl-navigation__link").removeClass("mdl-shadow--6dp");
+            $( this ).addClass( "mdl-shadow--6dp" );
+          });
+        
+      });
     
 
-        $('.darkenIcon').hover(function(){ 
-         $(this).css("background-color", "blue"); 
-         
-       });
       
+        */
+        
         
 
       
