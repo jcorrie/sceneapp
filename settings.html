@@ -92,6 +92,10 @@
   display: inline;
 }
 
+dialog {
+  
+  border: none;
+}
 
 
     </style>
@@ -111,7 +115,7 @@
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600" style="height: 10%;">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Scene</span>
+         <img src="scene_logo.png" style="height: 80%; margin-top: 1%; margin-bottom: 1%;">
           <div class="mdl-layout-spacer"></div>
           
           <!-- Search -->
@@ -167,24 +171,30 @@
             </ul>
           </div>
         </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800 mdl-shadow--20dp" style="overflow: hidden;">
-          <p class="mdl-navigation__link mdl-color--pink-200" href="">Available!<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2" style="left: 3em;">
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800 mdl-shadow--20dp" style="overflow: hidden; padding-top: 0px;">
+          <p id="availableTag" class="mdl-navigation__link " style="" href=""><span id="availableText">Available! </span>
+          
+          <label id="availableLabel" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2" style="margin-left: 50%; position: fixed; ">
+
+            
   <input type="checkbox" id="switch-2" class="mdl-switch__input">
   <span class="mdl-switch__label"></span>
 </label><p>
+  
+                    
 
-  <a class="mdl-navigation__link  " href="title.html"><i class="mdl-color-text--blue-grey-400 material-icons " role="presentation">list</i>The Feed</a>
+  <a class="mdl-navigation__link " href="title.html"><i class="mdl-color-text--blue-grey-400 material-icons " role="presentation">list</i>The Feed</a>
           <a class="mdl-navigation__link  " href="inbox.html"><i id="randomBadge" class=" mdl-color-text--blue-grey-400" data-badge="3" role="presentation">email</i>Inbox</a>
           <a class="mdl-navigation__link " href="profile.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">face</i>You</a>
           <a class="mdl-navigation__link " href="your_gigs.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Your Gigs</a>
           <a class="mdl-navigation__link" href="community.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Community</a>
-          <a class="mdl-navigation__link mdl-shadow--6dp" href="settings.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>Settings</a>
+          <a class="mdl-navigation__link mdl-shadow--6dp " href="settings.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>Settings</a>
 
           <div class="mdl-layout-spacer"></div>
           
           <div src="help_outline.html">
           <!-- insert help part here -->
-          <ul  class=" mdl-color---grey-600 mdl-js-ripple-effect">
+          <ul  class=" mdl-color---grey-600 mdl-js-ripple-effect" style="margin-bottom: 10px; margin-top: 10px">
             
               <button id="show-help" class="mdl-button mdl-js-button mdl-button--icon" style="margin-left: -0.5vw;">
                 <i id="darkenIcon" class="material-icons mdl-color-text--blue-grey-400">help_outline</i>
@@ -214,7 +224,6 @@
           
         </nav>
       </div>
-      
       
 
       <!-- Main class -->
@@ -300,7 +309,7 @@
       </main>
       
       
-      
+       
       
     </div>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
@@ -350,7 +359,88 @@
           </g>
         </defs>
       </svg>
-      <div id="view-source"></div>
+      
+      <button  id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp"> <i class="material-icons">create</i></button>
+      
+               
+  <dialog class="mdl-dialog2" style= "width: 80%; max-width: 900px; min-width: 280px;">
+    <h1 class="mdl-dialog__title" style="padding-left: 0px; padding-top: 1px; padding-bottom: 10px; font-size: 18px;">Send a message. You never know!</h1>
+  <form action="#" style="">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style=" display: block;align: center; margin-left: auto; margin-right: auto;width: 100%;">
+          
+          <input class="mdl-textfield__input" type="text" id="sample3">
+          <label class="mdl-textfield__label" for="sample3">To:</label>
+        </div>
+      </form>
+      
+        <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style=" display: block;align: center; margin-left: auto; margin-right: auto;width: 100%;">
+          <input class="mdl-textfield__input" type="text" id="sample3">
+          <label class="mdl-textfield__label" for="sample3">Subject</label>
+        </div>
+      </form>
+      
+      <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-card--border " style=" display: block;align: center; margin-left: auto; margin-right: auto;width: 100%;">
+          <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+          <label class="mdl-textfield__label" for="sample5">Write something...</label>
+          </div>
+      </form>
+      
+        <div class="mdl-card__actions mdl-card--border">
+          <button id="demo-show-snackbar" href="title.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored close" style=" display: block;align: center; margin-left: auto; margin-right: auto; font-size: 18px;"><i class="material-icons">send</i>
+          </button>
+        </div>
+  </dialog>
+  
+      <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+  <script>
+    var dialog2 = document.querySelector('.mdl-dialog2');
+    var showDialogButton = document.querySelector('#view-source');
+    if (! dialog2.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog2.showModal();
+    });
+    dialog2.querySelector('.close').addEventListener('click', function() {
+      dialog2.close();
+      
+     
+    });
+    
+
+     //Create snackbar
+              (function() {
+          'use strict';
+          var snackbarContainer = document.querySelector('#demo-snackbar-example');
+          var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+          var handler = function(event) {
+            showSnackbarButton.style.backgroundColor = '';
+          };
+          dialog2.addEventListener('click', function() {
+            'use strict';
+            /*
+            showSnackbarButton.style.backgroundColor = '#' +
+                Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                */
+                
+                
+            var data = {
+              message: 'Message sending...',
+              timeout: 4000,
+              actionHandler: handler,
+              actionText: 'Undo'
+            };
+            snackbarContainer.MaterialSnackbar.showSnackbar(data);
+          });
+        }());
+      
+  </script>
+
 
    
    
@@ -362,17 +452,10 @@
        
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     
-    <script>
-      
-      $(document).ready(function(){
-        
-        $('#mainContent').load("/settings.main.html");
-        
-      });
-      
-      
-    </script>
+            <script src="changingColor.js"></script>
+
 
   </body>
 </html>
