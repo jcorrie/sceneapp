@@ -97,6 +97,7 @@ dialog {
   border: none;
 }
 
+
     </style>
   </head>
   <body>
@@ -114,7 +115,7 @@ dialog {
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600" style="height: 10%;">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Scene</span>
+         <img src="scene_logo.png" style="height: 80%; margin-top: 1%; margin-bottom: 1%;">
           <div class="mdl-layout-spacer"></div>
           
           <!-- Search -->
@@ -170,14 +171,20 @@ dialog {
             </ul>
           </div>
         </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800 mdl-shadow--20dp" style="overflow: hidden;">
-          <p class="mdl-navigation__link mdl-color--pink-200" href="">Available!<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2" style="left: 3em;">
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800 mdl-shadow--20dp" style="overflow: hidden; padding-top: 0px;">
+          <p id="availableTag" class="mdl-navigation__link " style="" href=""><span id="availableText">Available! </span>
+          
+          <label id="availableLabel" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2" style="margin-left: 50%; position: fixed; ">
+
+            
   <input type="checkbox" id="switch-2" class="mdl-switch__input">
   <span class="mdl-switch__label"></span>
 </label><p>
+  
+                    
 
   <a class="mdl-navigation__link  " href="title.html"><i class="mdl-color-text--blue-grey-400 material-icons " role="presentation">list</i>The Feed</a>
-          <a class="mdl-navigation__link mdl-shadow--6dp " href="inbox.html"><i id="randomBadge" class=" mdl-color-text--blue-grey-400" data-badge="3" role="presentation">email</i>Inbox</a>
+          <a class="mdl-navigation__link mdl-shadow--6dp  " href="inbox.html"><i id="randomBadge" class=" mdl-color-text--blue-grey-400" data-badge="3" role="presentation">email</i>Inbox</a>
           <a class="mdl-navigation__link " href="profile.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">face</i>You</a>
           <a class="mdl-navigation__link " href="your_gigs.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Your Gigs</a>
           <a class="mdl-navigation__link" href="community.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Community</a>
@@ -187,7 +194,7 @@ dialog {
           
           <div src="help_outline.html">
           <!-- insert help part here -->
-          <ul  class=" mdl-color---grey-600 mdl-js-ripple-effect">
+          <ul  class=" mdl-color---grey-600 mdl-js-ripple-effect" style="margin-bottom: 10px; margin-top: 10px">
             
               <button id="show-help" class="mdl-button mdl-js-button mdl-button--icon" style="margin-left: -0.5vw;">
                 <i id="darkenIcon" class="material-icons mdl-color-text--blue-grey-400">help_outline</i>
@@ -218,7 +225,6 @@ dialog {
         </nav>
       </div>
       
-      
 
       <!-- Main class -->
       
@@ -243,7 +249,7 @@ dialog {
                     <i class="material-icons mdl-list__item-avatar">person</i>
                     <span>Laura Dubois</span>
                     <span class="mdl-list__item-text-body">
-                      Hey bbz
+                      Hey Chloe
                     </span>
                   </span>
                   <span class="mdl-list__item-secondary-content">
@@ -276,11 +282,73 @@ dialog {
                 </li>
               </ul>
               </div>
-                <div class="mdl-card__actions mdl-card--border">
-                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Get in touch
-                  </a>
+                
+                <div class="mdl-card__menu">
+                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" style="right:0.5em; top: 0.5em;">
+                    <i class="material-icons">share</i>
+                  </button>
+                 
+                 
+                  
+                  
                 </div>
+                
+
+          
+          
+        </div>
+        
+          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+           
+           
+             <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Read messages</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    
+    <!-- Put text in here -->
+                  
+                  
+              <ul class="demo-list-three mdl-list">
+                <li class="mdl-list__item mdl-list__item--three-line">
+                  <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-avatar">person</i>
+                    <span>Helena McConnel</span>
+                    <span class="mdl-list__item-text-body">
+                      Hiya, just wanted to check in on the project
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line">
+                  <span class="mdl-list__item-primary-content">
+                    <i class="material-icons  mdl-list__item-avatar">person</i>
+                    <span>Marina Sanchez</span>
+                    <span class="mdl-list__item-text-body">
+                      Hi, bit of an emergecny, sorry, but we're looking for a 4ft tall Bengali-speaking ventriloquist. Any ideas?
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                  </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line">
+                  <span class="mdl-list__item-primary-content">
+                    <i class="material-icons  mdl-list__item-avatar">person</i>
+                    <span>Bill</span>
+                    <span class="mdl-list__item-text-body">
+                      Hi
+                    </span>
+                  </span>
+                  <span class="mdl-list__item-secondary-content">
+                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                  </span>
+                </li>
+              </ul>
+              </div>
+                
                 <div class="mdl-card__menu">
                   <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" style="right:0.5em; top: 0.5em;">
                     <i class="material-icons">share</i>
@@ -304,8 +372,7 @@ dialog {
         
       </main>
       
-      
-      
+       
       
     </div>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
@@ -448,7 +515,9 @@ dialog {
        
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     
+            <script src="changingColor.js"></script>
 
 
   </body>
