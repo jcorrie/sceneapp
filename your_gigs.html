@@ -97,6 +97,7 @@ dialog {
   border: none;
 }
 
+
     </style>
   </head>
   <body>
@@ -114,7 +115,7 @@ dialog {
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600" style="height: 10%;">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Scene</span>
+         <img src="scene_logo.png" style="height: 80%; margin-top: 1%; margin-bottom: 1%;">
           <div class="mdl-layout-spacer"></div>
           
           <!-- Search -->
@@ -170,16 +171,22 @@ dialog {
             </ul>
           </div>
         </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800 mdl-shadow--20dp" style="overflow: hidden;">
-          <p class="mdl-navigation__link mdl-color--pink-200" href="">Available!<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2" style="left: 3em;">
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800 mdl-shadow--20dp" style="overflow: hidden; padding-top: 0px;">
+          <p id="availableTag" class="mdl-navigation__link " style="" href=""><span id="availableText">Available! </span>
+          
+          <label id="availableLabel" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2" style="margin-left: 50%; position: fixed; ">
+
+            
   <input type="checkbox" id="switch-2" class="mdl-switch__input">
   <span class="mdl-switch__label"></span>
 </label><p>
+  
+                    
 
-  <a class="mdl-navigation__link  " href="title.html"><i class="mdl-color-text--blue-grey-400 material-icons " role="presentation">list</i>The Feed</a>
+  <a class="mdl-navigation__link " href="title.html"><i class="mdl-color-text--blue-grey-400 material-icons " role="presentation">list</i>The Feed</a>
           <a class="mdl-navigation__link  " href="inbox.html"><i id="randomBadge" class=" mdl-color-text--blue-grey-400" data-badge="3" role="presentation">email</i>Inbox</a>
           <a class="mdl-navigation__link " href="profile.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">face</i>You</a>
-          <a class="mdl-navigation__link mdl-shadow--6dp" href="your_gigs.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Your Gigs</a>
+          <a class="mdl-navigation__link mdl-shadow--6dp  " href="your_gigs.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Your Gigs</a>
           <a class="mdl-navigation__link" href="community.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Community</a>
           <a class="mdl-navigation__link " href="settings.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>Settings</a>
 
@@ -187,7 +194,7 @@ dialog {
           
           <div src="help_outline.html">
           <!-- insert help part here -->
-          <ul  class=" mdl-color---grey-600 mdl-js-ripple-effect">
+          <ul  class=" mdl-color---grey-600 mdl-js-ripple-effect" style="margin-bottom: 10px; margin-top: 10px">
             
               <button id="show-help" class="mdl-button mdl-js-button mdl-button--icon" style="margin-left: -0.5vw;">
                 <i id="darkenIcon" class="material-icons mdl-color-text--blue-grey-400">help_outline</i>
@@ -258,7 +265,6 @@ dialog {
     
         
       </main>
-      
       
       
       
@@ -403,7 +409,9 @@ dialog {
        
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     
+            <script src="changingColor.js"></script>
 
 
   </body>
