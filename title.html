@@ -122,7 +122,7 @@ dialog {
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600" style="height: 10%;">
         <div class="mdl-layout__header-row">
-         <img src="scene_logo.png" style="height: 80%; margin-top: 1%; margin-bottom: 1%;">
+         <img id="sceneLogoMain" src="scene_logo.png" style="height: 80%; margin-top: 1%; margin-bottom: 1%;">
           <div class="mdl-layout-spacer"></div>
           
           <!-- Search -->
@@ -161,7 +161,7 @@ dialog {
         </div>
       </header>
       
-      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <div id="navDrawer" class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
           <img src="chloe_avatar.gif" class="demo-avatar">
           <div class="demo-avatar-dropdown">
@@ -255,6 +255,45 @@ dialog {
                       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                         Get in touch
                       </a>
+                    </div>
+                   
+                            </div>
+                            
+          <div class=" mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-grid">
+           
+                             
+                               <div class="mdl-card__title">
+                      <h2 class="mdl-card__title-text">Recommended connections</h2>
+                    </div>
+                    
+                                                                <div class="mdl-card__actions mdl-card--border">
+                                                                <div class="demo-list-action mdl-list">
+                                              <div class="mdl-list__item">
+                                                <span class="mdl-list__item-primary-content">
+                                                  <i class="material-icons mdl-list__item-avatar">person</i>
+                                                  <span>Harambe</span>
+                                                </span>
+                                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add</i></a>
+                                              </div>
+                                              <div class="mdl-list__item">
+                                                <span class="mdl-list__item-primary-content">
+                                                  <i class="material-icons mdl-list__item-avatar">person</i>
+                                                  <span>Harambe 2</span>
+                                                </span>
+                                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add</i></a>
+                                              </div>
+                                              <div class="mdl-list__item">
+                                                <span class="mdl-list__item-primary-content">
+                                                  <i class="material-icons mdl-list__item-avatar">person</i>
+                                                  <span>Harambe 3</span>
+                                                </span>
+                                                <span class="mdl-list__item-secondary-content">
+                                                  <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add</i></a>
+                                              </span>
+                                              </div>
+                                            </div>
+                    
+                   
                     </div>
                    
                             </div>
@@ -468,6 +507,9 @@ dialog {
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     
             <script src="changingColor.js"></script>
+            
+
+            
 
 
   </body>
