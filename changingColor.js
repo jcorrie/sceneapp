@@ -31,13 +31,13 @@
                   if($(this).find('.starIcon').hasClass("mdl-color-text--grey-400")){
                   
                  $(this).find('.starIcon').removeClass("mdl-color-text--grey-400"); 
-                 $(this).find('.starIcon').addClass("mdl-color-text--pink-500"); 
+                 $(this).find('.starIcon').addClass("mdl-color-text--pink-A200 "); 
                  console.log("working...?");
                  
                   } else {
                     
                     $(this).find('.starIcon').addClass("mdl-color-text--grey-400");
-                    $(this).find('.starIcon').removeClass("mdl-color-text--pink-500"); 
+                    $(this).find('.starIcon').removeClass("mdl-color-text--pink-A200"); 
                   }
                   
                 });
@@ -65,7 +65,7 @@
                           console.log("is checked")
                           $( "#availableText" ).text( "Available!" );
                           makePink();
-                          $("#availableText").fadeTo( "slow", 0.87);
+                          $("#availableText").fadeTo( "slow", 0.95);
                         
                          
                                           
@@ -119,14 +119,14 @@
                   function makeGrey(){
                   
                   $(myElement).addClass("mdl-color-text--blue-grey-400");
-                  $(myElement).removeClass("mdl-color-text--pink-A400");
+                  $(myElement).removeClass("mdl-color-text--pink-A200");
                   
                 }
                 
                   function makePink(){
                     
                     $(myElement).removeClass("mdl-color-text--blue-grey-400");
-                    $(myElement).addClass("mdl-color-text--pink-A400");
+                    $(myElement).addClass("mdl-color-text--pink-A200");
                     
                   }
                   
