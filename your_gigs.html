@@ -1,1068 +1,511 @@
-<!DOCTYPE HTML>
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
 
-<html lang="en" itemscope="" itemtype="http://schema.org/MobileApplication" class="wf-inactive gr__asana_com">
-  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
   <head>
-  <title>Be Scene</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta charset="utf-8"> 
-<!-- Title Tagz -->
-<meta itemprop="name" content="Asana is the easiest way for teams to track their work · Asana">
-<meta property="og:title" content="Asana is the easiest way for teams to track their work · Asana">
-<meta name="twitter:title" content="Asana is the easiest way for teams to track their work · Asana">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Your Things</title>
 
-<!-- URL -->
-<link itemprop="url" href="https://asana.com/">
-<meta property="og:url" content="https://asana.com/">
-<meta name="twitter:url" content="https://asana.com/">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="scene_logo.png">
 
-<!-- Description -->
-<meta name="description" content="It’s free to use, simple to get started, and powerful enough to run your entire business. Sign up for free today.">
-<meta itemprop="description" content="It’s free to use, simple to get started, and powerful enough to run your entire business. Sign up for free today.">
-<meta name="twitter:description" content="It’s free to use, simple to get started, and powerful enough to run your entire business. Sign up for free today.">
-<meta property="og:description" content="It’s free to use, simple to get started, and powerful enough to run your entire business. Sign up for free today.">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="scene_logo.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="scene_logo.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-pink.min.css" />
+    <link rel="stylesheet" href="app_styles.css">
+    
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    
+        .demo-drawer-header {
 
 
-<!-- Author -->
-<meta property="author" content="Asana">
-<meta property="og:site_name" content="Asana">
-<meta property="fb:app_id" content="444494130454">
-<meta name="twitter:site" content="@asana">
-<meta name="twitter:creator" content="@asana">
-<link rel="author" href="https://plus.google.com/u/0/113573148566753524000">
-<link rel="publisher" href="https://plus.google.com/u/0/113573148566753524000">
+  background: url("material-design-background.jpg") center / cover;
+}
 
-<!-- Image -->
-<meta itemprop="image" content="https://luna1.co/906e13.png">
-<meta property="og:image" content="https://luna1.co/906e13.png">
-<meta name="twitter:image" content="https://luna1.co/906e13.png">
-<meta name="twitter:image:src" content="https://luna1.co/906e13.png">
-<link itemprop="thumbnailUrl" href="https://luna1.co/906e13.png"> <!-- Content Type: Mobile App -->
-<!-- see html itemtype property above, should be /MobileApplication -->
-<meta name="twitter:card" content="app">
-<meta name="twitter:app:name:iphone" content="Asana: Team Tasks &amp; Conversations">
-<meta name="twitter:app:id:iphone" content="489969512">
-<meta name="twitter:app:name:ipad" content="Asana: Team Tasks &amp; Conversations">
-<meta name="twitter:app:id:ipad" content="489969512">
-<meta name="twitter:app:name:googleplay" content="Asana Mobile">
-<meta name="twitter:app:id:googleplay" content="com.asana.app">
-<meta property="al:ios:app_store_id" content="489969512">
-<meta property="al:ios:app_name" content="Asana: Team Tasks &amp; Conversations">
-<meta property="al:android:app_name" content="Asana Mobile">
-<meta property="al:android:package" content="com.asana.app">
-<meta itemprop="screenshot" content="http://a5.mzstatic.com/us/r30/Purple3/v4/f9/19/5e/f9195e1d-504e-9777-514d-8de51ec87e15/screen568x568.jpeg">
-<meta itemprop="screenshot" content="http://a3.mzstatic.com/us/r30/Purple4/v4/52/93/49/529349dc-61de-6232-ca64-5d543fa8b8d4/screen568x568.jpeg">
-<meta itemprop="downloadUrl" content="https://play.google.com/store/apps/details?id=com.asana.app">
-<meta itemprop="applicationCategory" content="Task Management">
-<meta itemprop="applicationCategory" content="Productivity">
-<meta itemprop="operatingSystem" content="Android 2.2+, iOS6+">
-<meta itemprop="device" content="Android, iOS"> 
-      <link rel="apple-touch-icon" sizes="57x57" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-57x57.png">
-      <link rel="apple-touch-icon" sizes="60x60" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-60x60.png">
-      <link rel="apple-touch-icon" sizes="72x72" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="76x76" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-76x76.png">
-      <link rel="apple-touch-icon" sizes="114x114" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-114x114.png">
-      <link rel="apple-touch-icon" sizes="120x120" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-120x120.png">
-      <link rel="apple-touch-icon" sizes="144x144" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-144x144.png">
-      <link rel="apple-touch-icon" sizes="152x152" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-152x152.png">
-      <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="https://d1gwm4cf8hecp4.cloudfront.net/images/favicons/apple-touch-icon-180x180.png">
-      <link rel="favicon" sizes="16x16" type="image/png" href="scene_logo.png">
-      <link rel="favicon" sizes="32x32" type="image/png" href="scene_logo.png">
-      <link rel="favicon" sizes="96x96" type="image/png" href="scene_logo.png">
-      <link rel="favicon" sizes="192x192" type="image/png" href="scene_logo.png.png">
-      <link rel="favicon" sizes="194x194" type="image/png" href="scene_logo.png">
+#loading{
+ 
   
-  <link rel="shortcut icon" href="scene_logo.png">
-<!-- Specific things for each type of content -->
+  top:47.5vh;
+  display: block;
+  position: absolute;
+  margin-left: 45%;
+  margin-right: auto;
+  z-index: 99;
+  
+}
 
-<script src="jquery-3.1.1.min.js"></script>
+#iconList{
+  
+  margin-right: 2.5%;
+  padding-bottom: 1.5%;
+}
+.demo-list-control {
+  
+}
 
-<meta name="apple-itunes-app" content="app-id=489969512">
-<meta name="twitter:app:name:iphone" content="Asana: Team Tasks &amp; Conversations">
-<meta name="twitter:app:id:iphone" content="489969512">
-<meta name="twitter:app:name:ipad" content="Asana: Team Tasks &amp; Conversations">
-<meta name="twitter:app:id:ipad" content="489969512">
-<meta name="twitter:app:name:googleplay" content="Asana Mobile">
-<meta name="twitter:app:id:googleplay" content="com.asana.app">
 
-<meta name="google-site-verification" content="DxotoqlMTfSRrxiKGMd-XA44xVkuFK-hBE6Fb1s_sos">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+.demo-list-radio {
+  display: inline;
+}
 
-<iframe height="0" width="0" src="//5114821.fls.doubleclick.net/activityi;src=5114821;type=retar0;cat=gener0;ord=4825699936665;~oref=https%3A%2F%2Fasana.com%2F%3F-noredirect?" style="display: none; visibility: hidden;"></iframe><script src="https://script.crazyegg.com/pages/scripts/0031/2742.js?410797" async="" type="text/javascript"></script><script async="" src="//connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-P7MF9W"></script><script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.bRDJBM_7ci0.O/m=client/rt=j/sv=1/d=1/ed=1/am=EQ/rs=AGLTcCMQWfcLeLZsrj7F3isSD44W4ZvQxQ/cb=gapi.loaded_0" async=""></script><script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "url": "https://asana.com",
-    "logo": "https://luna1.co/0fc2ef.png",
-    "sameAs" : [
-      "http://facebook.com/asana",
-      "http://www.twitter.com/asana",
-      "http://instagram.com/asana",
-      "https://www.linkedin.com/company/asana",
-      "https://plus.google.com/+asana/",
-      "https://www.youtube.com/user/AsanaTeam"
-    ]
-  }
-</script>
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type" : "WebSite",
-    "name" : "Asana",
-    "url" : "https://asana.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://asana.com/guide#stq={search_term_string}",
-      "query-input": "required name=search_term_string"
+dialog {
+  
+  border: none;
+}
+
+
+    </style>
+  </head>
+  <body>
+   
+  
+  <!-- .gif spinner -->
+  
+  <div id="loading" style="">
+    <img id="loading-image" style="height: 50px;" src="loading.gif" alt="Loading..." />
+  </div>
+
+    
+    
+    
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600" style="height: 10%;">
+        <div class="mdl-layout__header-row">
+         <img src="scene_logo.png" style="height: 80%; margin-top: 1%; margin-bottom: 1%;">
+          <div class="mdl-layout-spacer"></div>
+          
+          <!-- Search -->
+<!-- Expandable Textfield -->
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" style="right: 1em;">
+    <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6" style="margin-top: 0px; top: -0.8em;">
+      <i class="material-icons">search</i>
+    </label>
+    <div class="mdl-textfield__expandable-holder">
+      <input class="mdl-textfield__input" type="text" id="sample6">
+      <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+    </div>
+  </div>
+</form>
+        
+    <!-- This was the old drop-down - top right
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+            <li class="mdl-menu__item">About</li>
+            <li class="mdl-menu__item">Contact</li>
+            <a class="mdl-menu__item" href="landing.html">Log Out</a>
+          </ul>
+          ex
+          -->
+          
+      <!-- Accent-colored raised button with ripple -->
+<a class="mdl-layout--large-screen-only mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" href="landing.html">Log Out
+  
+</a>
+
+<a class="mdl-layout--small-screen-only mdl-button mdl-js-button mdl-button--icon mdl-button--colored" href="landing.html"><i class="material-icons" role="">power_settings_new</i>
+</a>
+        </div>
+      </header>
+      
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="chloe_avatar.gif" class="demo-avatar">
+          <div class="demo-avatar-dropdown">
+            <span>chloe.pinto@london.com</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item">hello@example.com</li>
+              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-700 mdl-shadow--20dp" style="overflow: hidden; padding-top: 0px;">
+          <p id="availableTag" class="mdl-navigation__link " style="" href=""><span id="availableText">Available! </span>
+          
+          <label id="availableLabel" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2" style="margin-left: 50%; position: fixed; ">
+
+            
+  <input type="checkbox" id="switch-2" class="mdl-switch__input">
+  <span class="mdl-switch__label"></span>
+</label><p>
+  
+                    
+
+  <a class="mdl-navigation__link " href="title.html"><i class="mdl-color-text--blue-grey-400 material-icons " role="presentation">list</i>The Feed</a>
+          <a class="mdl-navigation__link  " href="inbox.html"><i id="randomBadge" class=" mdl-color-text--blue-grey-400" data-badge="3" role="presentation">email</i>Inbox</a>
+          <a class="mdl-navigation__link " href="profile.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">face</i>You</a>
+          <a class="mdl-navigation__link mdl-shadow--6dp  " href="your_gigs.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Your Gigs</a>
+          <a class="mdl-navigation__link" href="community.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Community</a>
+          <a class="mdl-navigation__link " href="settings.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">settings</i>Settings</a>
+
+          <div class="mdl-layout-spacer"></div>
+          
+          <div src="help_outline.html">
+          <!-- insert help part here -->
+          <ul  class=" mdl-color---grey-600 mdl-js-ripple-effect" style="margin-bottom: 10px; margin-top: 10px">
+            
+              <button id="show-help" class="mdl-button mdl-js-button mdl-button--icon" style="margin-left: -0.5vw;">
+                <i id="darkenIcon" class="material-icons mdl-color-text--blue-grey-400">help_outline</i>
+            </button>
+
+          </ul>
+              
+          
+                  <!-- "About us" html pop up -->
+     
+               <dialog class="mdl-dialog" style= "width: 50%; max-width: 300px;">                    <h1 class="mdl-dialog__title" style="padding-left: 0px; padding-top: 1px; padding-bottom: 10px; font-size: 18px;">Team Scene.</h1>                                      <div class = "mdl-dialog__supporting-text">                        Scene is brought to you by a little team of theatre-lovers based in London.                         <br>                                                                      </div>                                                                    <div class="mdl-card__actions mdl-card--border">                          <button id="demo-show-snackbar" href="title.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored close" style=" display: block;align: center; margin-left: auto; margin-right: auto; font-size: 18px;"><i class="material-icons">done</i>                            </button>                        </div>                  </dialog>
+                
+                </div>
+          
+        </nav>
+      </div>
+      
+      
+
+      <!-- Main class -->
+      
+      <main id="mainContent" class="mdl-layout__content mdl-color--grey-100">
+        
+        
+
+        <div class="mdl-grid demo-content">
+          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+           
+                             
+                               <div class="mdl-card__title">
+                      <h2 class="mdl-card__title-text">Pending opportunities</h2>
+                    </div>
+                    
+                      
+                    
+                    <div class="mdl-card__actions mdl-card--border">
+                    
+                    
+                    
+                    </div>
+                 
+                 
+                  <div>
+                    
+                    <img src="https://media.giphy.com/media/rPACo2gRHVJNC/giphy.gif">
+                    
+                  </div>
+                 
+                 
+                            </div>
+                            
+                            
+          <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+           
+                             
+                               <div class="mdl-card__title">
+                      <h1 class="mdl-card__title-text">Ongoing gigs</h1>
+                    </div>
+                    
+                      
+                    
+                    <div class="mdl-card__actions mdl-card--border">
+                    
+                        <div class="mdl-card__supporting-text">
+                          
+                              <div class="mdl-card__supporting-text">
+                                
+                                <h4>Macbeth</h4>
+                                <p> 
+                                    For a unique series celebrating Shakespeare's life, the Royal Shakespeare Company produces a Sheakespeare play.
+                                </p>
+                                
+                              </div>
+                      
+                       <div class="mdl-card__actions mdl-card--border">
+                         
+                                <div class="mdl-card__supporting-text">
+                                
+                                <h4>Brexit II: Breakfast...?</h4> 
+                                
+                                <p>The hit show returns for a sequel. With the right to eat French pastries lost in Article 50 negotiations, three young chefs explore how Brits will survive without the contintental breakfast option during short hotel stays.</p>
+                                
+                              </div>                    
+                      
+                      </div>
+                      
+                       <div class="mdl-card__actions mdl-card--border">
+                         
+                                <div class="mdl-card__supporting-text">
+                                
+                                <h4>How to Dismantle an Atomic Bomb</h4>
+                                
+                                    <p>
+                                      An uplifting and inspiring story of how Bono changed the world through music.
+                                    </p>
+                              </div>                    
+                      
+                      </div>
+                        
+                      </div>
+                  
+                  </div>
+                     
+                  
+                 
+                 
+         </div>
+                            
+                            
+          <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+           
+                             
+              <div class="mdl-card__title">
+                      <h2 class="mdl-card__title-text">Past projects</h2>
+              </div>
+                    
+                      
+                    
+              <div class="mdl-card__actions mdl-card--border">
+                    
+                    <div class="mdl-card__supporting-text">
+                          
+                              <div class="mdl-card__supporting-text">
+                                
+                                <h4>A play you worked on</h4>
+                                <p> 
+                                    With some description here
+                                </p>
+                                
+                              </div>
+                      
+                       <div class="mdl-card__actions mdl-card--border">
+                         
+                                <div class="mdl-card__supporting-text">
+                                
+                                <h4>Another play you worked on</h4> 
+                                
+                                <p>More exciting stuff written here</p>
+                                
+                              </div>                    
+                      
+                      </div>
+                      
+               
+                        
+                      </div>
+                    
+               </div>
+                 
+                 
+                  
+                 
+                 
+        </div>
+                  
+                  
+                  
+     
+        </div>
+      
+    
+        
+      </main>
+      
+      
+      
+    </div>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
+        <defs>
+          <mask id="piemask" maskContentUnits="objectBoundingBox">
+            <circle cx=0.5 cy=0.5 r=0.49 fill="white" />
+            <circle cx=0.5 cy=0.5 r=0.40 fill="black" />
+          </mask>
+          <g id="piechart">
+            <circle cx=0.5 cy=0.5 r=0.5 />
+            <path d="M 0.5 0.5 0.5 0 A 0.5 0.5 0 0 1 0.95 0.28 z" stroke="none" fill="rgba(255, 255, 255, 0.75)" />
+          </g>
+        </defs>
+      </svg>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 250" style="position: fixed; left: -1000px; height: -1000px;">
+        <defs>
+          <g id="chart">
+            <g id="Gridlines">
+              <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="27.3" x2="468.3" y2="27.3" />
+              <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="66.7" x2="468.3" y2="66.7" />
+              <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="105.3" x2="468.3" y2="105.3" />
+              <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="144.7" x2="468.3" y2="144.7" />
+              <line fill="#888888" stroke="#888888" stroke-miterlimit="10" x1="0" y1="184.3" x2="468.3" y2="184.3" />
+            </g>
+            <g id="Numbers">
+              <text transform="matrix(1 0 0 1 485 29.3333)" fill="#888888" font-family="'Roboto'" font-size="9">500</text>
+              <text transform="matrix(1 0 0 1 485 69)" fill="#888888" font-family="'Roboto'" font-size="9">400</text>
+              <text transform="matrix(1 0 0 1 485 109.3333)" fill="#888888" font-family="'Roboto'" font-size="9">300</text>
+              <text transform="matrix(1 0 0 1 485 149)" fill="#888888" font-family="'Roboto'" font-size="9">200</text>
+              <text transform="matrix(1 0 0 1 485 188.3333)" fill="#888888" font-family="'Roboto'" font-size="9">100</text>
+              <text transform="matrix(1 0 0 1 0 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">1</text>
+              <text transform="matrix(1 0 0 1 78 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">2</text>
+              <text transform="matrix(1 0 0 1 154.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">3</text>
+              <text transform="matrix(1 0 0 1 232.1667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">4</text>
+              <text transform="matrix(1 0 0 1 309 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">5</text>
+              <text transform="matrix(1 0 0 1 386.6667 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">6</text>
+              <text transform="matrix(1 0 0 1 464.3333 249.0003)" fill="#888888" font-family="'Roboto'" font-size="9">7</text>
+            </g>
+            <g id="Layer_5">
+              <polygon opacity="0.36" stroke-miterlimit="10" points="0,223.3 48,138.5 154.7,169 211,88.5
+              294.5,80.5 380,165.2 437,75.5 469.5,223.3 	"/>
+            </g>
+            <g id="Layer_4">
+              <polygon stroke-miterlimit="10" points="469.3,222.7 1,222.7 48.7,166.7 155.7,188.3 212,132.7
+              296.7,128 380.7,184.3 436.7,125 	"/>
+            </g>
+          </g>
+        </defs>
+      </svg>
+      
+      <button  id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp"> <i class="material-icons">create</i></button>
+      
+               
+  <dialog class="mdl-dialog2" style= "width: 80%; max-width: 900px; min-width: 280px;">
+    <h1 class="mdl-dialog__title" style="padding-left: 0px; padding-top: 1px; padding-bottom: 10px; font-size: 18px;">Send a message. You never know!</h1>
+  <form action="#" style="">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style=" display: block;align: center; margin-left: auto; margin-right: auto;width: 100%;">
+          
+          <input class="mdl-textfield__input" type="text" id="sample3">
+          <label class="mdl-textfield__label" for="sample3">To:</label>
+        </div>
+      </form>
+      
+        <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style=" display: block;align: center; margin-left: auto; margin-right: auto;width: 100%;">
+          <input class="mdl-textfield__input" type="text" id="sample3">
+          <label class="mdl-textfield__label" for="sample3">Subject</label>
+        </div>
+      </form>
+      
+      <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-card--border " style=" display: block;align: center; margin-left: auto; margin-right: auto;width: 100%;">
+          <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+          <label class="mdl-textfield__label" for="sample5">Write something...</label>
+          </div>
+      </form>
+      
+        <div class="mdl-card__actions mdl-card--border">
+          <button id="demo-show-snackbar" href="title.html" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored close" style=" display: block;align: center; margin-left: auto; margin-right: auto; font-size: 18px;"><i class="material-icons">send</i>
+          </button>
+        </div>
+  </dialog>
+  
+      <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+  <script>
+    var dialog2 = document.querySelector('.mdl-dialog2');
+    var showDialogButton = document.querySelector('#view-source');
+    if (! dialog2.showModal) {
+      dialogPolyfill.registerDialog(dialog);
     }
-  }
-</script>
+    showDialogButton.addEventListener('click', function() {
+      dialog2.showModal();
+    });
+    dialog2.querySelector('.close').addEventListener('click', function() {
+      dialog2.close();
+      
+     
+    });
+    
 
-
-  <!-- Stylesheets -->
-
-  <script type="text/javascript">
-    if (typeof window.console == "undefined") {
-      window.console = { log: function () {
-      } }; // catch all console.log requests
-    }
+     //Create snackbar
+              (function() {
+          'use strict';
+          var snackbarContainer = document.querySelector('#demo-snackbar-example');
+          var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+          var handler = function(event) {
+            showSnackbarButton.style.backgroundColor = '';
+          };
+          dialog2.addEventListener('click', function() {
+            'use strict';
+            /*
+            showSnackbarButton.style.backgroundColor = '#' +
+                Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                */
+                
+                
+            var data = {
+              message: 'Message sending...',
+              timeout: 4000,
+              actionHandler: handler,
+              actionText: 'Undo'
+            };
+            snackbarContainer.MaterialSnackbar.showSnackbar(data);
+          });
+        }());
+      
   </script>
 
-  <!--[if lt IE 9]>
-  <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
 
-  <!-- global js - needs to load before DOM -->
-  <script src="https://asana.com/assets/dist/js/global-98831094ab.js" data-apikey="95d6c42b13ab2ceaebf24a8baac5afc8"></script><link rel="stylesheet" href="https://asana.com/_themes/asana/css/fonts-blocking.css" media="all"><script type="text/javascript" src="https://apis.google.com/js/client.js" gapi_processed="true"></script>
-  <link rel="stylesheet" type="text/css" href="brochureStyle.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-    <script src="https://asana.com/assets/dist/js/site-specific/marketing-034707f2d0.js"></script>
-   <!--Optimizely code for A/B testing & some pixels -->
-  <script src="https://cdn.optimizely.com/js/11325949.js"></script>
-  <!-- 
-  adding this to try and fix a pixel issue 
-  relative protocol // trying to load http when on https :( ???
-  -->
-  <script src="https://platform.twitter.com/oct.js" async="" id="twttr-js"></script><link rel="stylesheet" href="/_themes/asana/css/fonts-nonblocking.css" media="all">
-
-
-
-<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
-.en-markup-crop-options {
-    top: 18px !important;
-    left: 50% !important;
-    margin-left: -100px !important;
-    width: 200px !important;
-    border: 2px rgba(255,255,255,.38) solid !important;
-    border-radius: 4px !important;
-}
-
-.en-markup-crop-options div div:first-of-type {
-    margin-left: 0px !important;
-}
-</style>
-
-<script async="" src="//cdn.nanigans.com/NaN_tracker.js"></script>
-
-</head>
-
-<body class="page--home" data-gr-c-s-loaded="true">
-  <header id="header" class="siteHeader" role="banner" style="">
-  <div class="container">
-    <div class="row">
-      <div class="col-xsmall-12">
-                    <a class="siteHeader-logo">
-                 
-                      
-                    </a>
-        
-                   
-          
-        
-      <div class="siteHeader-buttons">
-        <div class="hidden-logged-in">
-          <a href="#signup" class="button signup-dialog-button" title="Join. It's Free." tabindex="2">Join. It's Free.</a>
-          <a id="login-button" href="title.html" class="button button--secondary" title="Log In" tabindex="3">Log In</a>
-        </div>
-        <div class="visible-logged-in">
-          <a class="button" title="Go to Asana" href="title.html" tabindex="1"> Go to Scene</a>
-        </div>
-      </div>
-
-      <div class="siteHeader-textlinks">
-        <div class="hidden-logged-in">
-          <a id="login-text-link" style="display:none" href="#login" onclick="AsanaHelpers.showLoginModal();" class="link link--textlink hidden-logged-in" tabindex="3">Log In</a>
-        </div>
-              </div>
-
-        
-
-      <div class="siteHeader-mobile-menu" style="margin-right: 20px; width: 20vw;">
-     
-     
-     
-           <div class="" style="margin: auto; display: block; margin-top: 8px;" >
-
-    
-          <a id="login-button" style="padding-left:0px ; display:block; width: inherit; text-align: center; padding-right:0px;" href="title.html" class="button button--secondary" title="Log In" tabindex="3">Log In</a>
-       
-        <div class="visible-logged-in">
-          <a class="button" title="Go to Asana" href="title.html" tabindex="1"> Go to Scene</a>
-        </div>
-      </div>
-     <!-- kill hamburger
    
-          
-               <button id="siteHeader-mobile-menu-button" onclick="openCloseMenu();">
-          <div id="hamburger-x-icon" class="">
+   
+   
+  <script src="wrappingScript.js">
+  
+  </script>
+      
        
-         
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-            
-        </button>
-        -->
-      </div>
-       
-    </div>
-  </div>
-</div></header>
- <div class="page-wrap">
-
-    <section class="pageSection section--gradient-hero-cta">
-    <div class="container">
-      <div class="row">
-        <div class="pageHero-content">
-          <h1>Get some action</h1>
-          <div class="hidden-xsmall">
-            <p class="p--large">The theatre community you love—all in one place.</p>
-          </div>
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     
-            <div class="hidden-small hidden-medium hidden-large hidden-xlarge">
-            <p class="p--large">The theatre community you love. Here.</p>
-          </div>
-          
-        </div>
-      </div>
-      <div class="row">
-        <form id="signup-form-home" class="signupForm signupForm--home" onsubmit="AsanaHelpers.signupWithEmail($('#signup-email-home'));return false;">
-  <input type="hidden" name="name" value="" autocomplete="off">
-  <label for="signup-email-home">Email Address</label>
+            <script src="changingColor.js"></script>
 
 
-  <!-- two checks, the first to see if we've already asked for a work email, the second has an alternate CTA without "Free" -->
-
-  <button id="signup-submit-home" class="" tabindex="13" onclick="AsanaHelpers.signupWithEmail($('#signup-email-home'));return false;" title="Sign Up">Join. It's Free.</button>
-
-  <div class="error-message-container">
-    <div id="signup-email-home-not-valid" class="error-message" style="display:none">
-      <div class="icon icon--alert"></div>
-      Oops, looks like that’s not a valid email.
-    </div>
-  </div>
-</form>
-
-<script type="text/javascript">
-$(function(){
-  $("#signup-submit-home").keyup(function(event){
-    if (event.keyCode == 13){
-      $("#signup-submit-home").click();
-    }
-  });
-  $("#signup-email-home").on("keydown", function() {
-    var $this = $(this);
-    $this.addClass("active");
-    $("#signup-email-home-not-valid").fadeOut(500);
- });
- $("#signup-email-home").on("keyup", function() {
-    var $this = $(this);
-    if (!$this.val().length) {
-      $this.removeClass("active");
-    }
-  });
-});
-</script>
-
-<div class="form-replacement-buttons-mobile">
-   <!-- MOBILE DOWNLOAD BUTTONS 
-  <div class="visible-android">
-    <a href="https://play.google.com/store/apps/details?id=com.asana.app" onclick="AsanaHelpers.pushEventToGA(['Download', 'Android', 'Premium']);" class="app-store-button">
-        <img src="https://luna1.co/download-google-play.svg" alt="Download App Button" title="Download App">
-    </a>
-  </div>
-
-  <div class="visible-ios">
-    <a href="https://itunes.apple.com/us/app/asana-mobile/id489969512?mt=8" onclick="AsanaHelpers.pushEventToGA(['Download', 'iOS', 'Premium']);" class="app-store-button">
-        <img src="https://luna1.co/download-app-store.svg" alt="Download App Button" title="Download App">
-    </a>
-  </div>
-  
-  -->
-</div>
-
-      </div>
-      <div class="row">
-        <div id="autojoin-optimizely-test" class="hidden">
-          <p><a href="#signup" class="textlink--background">Friends already using Scene? Join them.</a></p>
-        </div>
-        <div class="visible-logged-in">
-          <a class="button" title="Go to Asana" href="title.html" tabindex="1"> Go to Scene</a>
-        </div>
-      </div>
-
-    </div>
-    <a class="next-arrow" href="#next"></a>
-  </section>
-
-
-    <section class="pageSection section--customers-heart">
-    <div class="container">
-      <div class="row">
-        <div class="innerContent">
-          <h2>Actors. Directors. Writers.</h2>          <p class="p--large">You deserve your own <nobr>space</nobr> to connect with people who matter and create great projects together.</p>        </div>
-      </div>
-      <div class="row hidden-xsmall">
-        <div class="customer-list">
-          <div class="equal-height-row">
-                          <div class="customer equal-float-candidate" style="height: auto;">
-  <img class="equal-elem" src="http://www.tutoryou.eu/public/wp-content/uploads/2016/09/logo-nch.png" alt="NCH" title="NCH Logo" style="height: 0px;" data-eqh-postop="0">
-</div>
-
-
-                          <div class="customer equal-float-candidate" style="height: auto;">
-  <img class="equal-elem" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Royal_Shakespeare_Company.svg/1280px-Royal_Shakespeare_Company.svg.png" alt="RSC" title="RSC Logo" style="height: 0px;" data-eqh-postop="0">
-</div>
-
-
-                          <div class="customer equal-float-candidate" style="height: auto;">
-  <img class="equal-elem" src="http://www.groupline.com/images/skins/groupline/signs.png" alt="Theatreland" title="Theatreland Logo" style="height: 0px;" data-eqh-postop="0">
-</div>
-
-
-                          <div class="customer equal-float-candidate" style="height: auto;">
-  <img class="equal-elem" src="equityLogo.png" alt="Equity" title="Equity Logo" style="height: 0px;" data-eqh-postop="0">
-</div>
-
-
-         
-
-
-                          <div class="customer equal-float-candidate" style="height: auto;">
-  <img class="equal-elem" src="http://www.cdd.ac.uk/wp-content/uploads/2015/08/rada1-300x150.png" alt="Rada" title="Rada Logo" style="height: 0px;" data-eqh-postop="0">
-</div>
-
-
-            
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        
-      
-
-      <div class="row hidden-small hidden-medium hidden-large hidden-xlarge">
-        <div class="customer-list-icons">
-                                  <div class="customer">
-              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Royal_Shakespeare_Company.svg/1280px-Royal_Shakespeare_Company.svg.png" alt="RSC" title="RSC Logo">
-            </div>
-            
-                                  <div class="customer">
-              <img src="http://www.groupline.com/images/skins/groupline/signs.png" alt="Theatreland" title="Theatreland">
-            </div>
-            
-                                  <div class="customer">
-              <img src="http://www.tutoryou.eu/public/wp-content/uploads/2016/09/logo-nch.png" alt="NCH" title="NCH Logo">
-            </div>
-            
-                                  <div class="customer">
-              <img src="equityLogo.png" alt="Equity" title="Equity Logo">
-            </div>
-
-      </div> 
-          
-
-        </div>
-        
-                              <br>
-            <br>
-                  <div class="innerContent">
-                      <p class="p--large">They know what <nobr>it takes</nobr> to <span style="color: #E91E63">#beScene</span>. Do you?</p>       
-                         <br>   
-                       <a class="button button--secondary" href="/customers">Hear what they say</a>
-                
-            
-                  </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="pageSection--background section--rotating-screenshots " id="next">
-  <div class="container">
-    <div class="row">
-      <div class="text-container">
-        <h2 class="slide-title">Share your portfolio. Browse the feed. Join your dream project. </h2>
-        <p class="p--large">Scene is built by us with love for you. It's not an app. It's a new home for your community.</p>
-        <a class="button button--secondary button--background" href="/product">Learn More</a>
-      </div>
-      <div class="screenshot-container">
-        <img src="https://luna1.co/04bcb6.png" id="not-an-img" class="placeholder" alt="placeholder image" title="">
-        <span>
-                <img class="screenshots active" id="screenshot-1" src="projectDemo.png" alt="Screenshot" title="Screenshot" style="display: block; overflow: hidden;">
-                <img class="screenshots" id="screenshot-2" src="profileDemo.png" alt="Screenshot" title="Screenshot" style="display: none; overflow: hidden;">
-                <img class="screenshots" id="screenshot-3" src="gigsDemo.png" alt="Screenshot" title="Screenshot" style="display: none; overflow: hidden;">
-        
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script type="text/javascript">
-$(function(){
-  var playScreenshots = function() {
-    var fadeSpeed = 250;
-    var active = $(".section--rotating-screenshots .screenshots.active");
-    // console.log("Current: " + active.attr("id"));
-    // ternary operator: if there's a next one, use it, otherwise use the first child
-    var next = active.next().length ? active.next() : active.parent().children(":first-child");
-    // console.log("Next: " + next.attr("id"));
-
-    next.fadeIn(fadeSpeed, function() {
-      next.addClass("active");
-      active.fadeOut(fadeSpeed, function() {
-        active.removeClass("active");
-      });
-    });
-    setTimeout(playScreenshots, 3000);
-  };
-  setTimeout(playScreenshots, 750);
-});
-</script>
-
-
-
-  <section class="section pageSection section--prefooter-laptop-cta hidden-logged-in">
-  <div class="bgCircle bgCircle--product-a"></div>
-  <div class="bgCircle bgCircle--product-b"></div>
-  <div class="bgCircle bgCircle--product-c"></div>
-  <div class="container">
-    <div class="row">
-      <h2>Join Scene today</h2>
-    </div>
-    <div class="row">
-      <p class="p--large">It works flawlessly on mobile, tablet, latptop. Designed to work for your professional lifestyle, Scene helps reach the people and projects that matter. Anywhere. Anytime.</p>
-    </div>
-    <div class="row">
-      <form id="signup-form-prefooter-laptop-cta" class="signupForm signupForm--prefooter-laptop-cta" onsubmit="AsanaHelpers.signupWithEmail($('#signup-email-prefooter-laptop-cta'));return false;">
-  <input type="hidden" name="name" value="" autocomplete="off">
-  <label for="signup-email-prefooter-laptop-cta">Email Address</label>
-  <input id="signup-email-prefooter-laptop-cta" class="input--email" tabindex="12" placeholder="you@yours.com" name="email" type="email" autocomplete="off">
-
-  <!-- two checks, the first to see if we've already asked for a work email, the second has an alternate CTA without "Free" -->
-
-  <button id="signup-submit-prefooter-laptop-cta" class="" tabindex="13" onclick="AsanaHelpers.signupWithEmail($('#signup-email-prefooter-laptop-cta'));return false;" title="Sign Up">Join. It's Free.</button>
-
-  <div class="error-message-container">
-    <div id="signup-email-prefooter-laptop-cta-not-valid" class="error-message" style="display:none">
-      <div class="icon icon--alert"></div>
-      Oops, looks like that’s not a valid email.
-    </div>
-  </div>
-</form>
-
-<script type="text/javascript">
-$(function(){
-  $("#signup-submit-prefooter-laptop-cta").keyup(function(event){
-    if (event.keyCode == 13){
-      $("#signup-submit-prefooter-laptop-cta").click();
-    }
-  });
-  $("#signup-email-prefooter-laptop-cta").on("keydown", function() {
-    var $this = $(this);
-    $this.addClass("active");
-    $("#signup-email-prefooter-laptop-cta-not-valid").fadeOut(500);
- });
- $("#signup-email-prefooter-laptop-cta").on("keyup", function() {
-    var $this = $(this);
-    if (!$this.val().length) {
-      $this.removeClass("active");
-    }
-  });
-});
-</script>
-
-<div class="form-replacement-buttons-mobile">
-   <!-- MOBILE DOWNLOAD BUTTONS 
-  <div class="visible-android">
-    <a href="https://play.google.com/store/apps/details?id=com.asana.app" onclick="AsanaHelpers.pushEventToGA(['Download', 'Android', 'Premium']);" class="app-store-button">
-        <img src="https://luna1.co/download-google-play.svg" alt="Download App Button" title="Download App">
-    </a>
-  </div>
-
-  <div class="visible-ios">
-    <a href="https://itunes.apple.com/us/app/asana-mobile/id489969512?mt=8" onclick="AsanaHelpers.pushEventToGA(['Download', 'iOS', 'Premium']);" class="app-store-button">
-        <img src="https://luna1.co/download-app-store.svg" alt="Download App Button" title="Download App">
-    </a>
-  </div>
-  
-  -->
-</div>
-
-    </div>
-  </div>
-</section>
-
-
-  <footer id="footer" class="footer-mini">
-  <div class="container">
-    <div class="row">
-      <div class="footer-column--logo">
-
-        <img id="logoBW" href="/?noredirect" src="logoBW.png" class="" style="height: 5vh">
-        
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-</div>
-<footer id="footer" class="footer">
-  
-    <div class="container">
-    <div class="row">
-      <div class="footer-column--logo" style="">
-     
-        <img id="logoBW" href="/?noredirect" src="logoBW.png" class="" style="height: 5vh; display: block; margin: auto;">
-      </div>
-    </div>
-  </div>
-  
-</footer>
-
-
-
-
-<iframe name="oauth2relay773629225" id="oauth2relay773629225" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=https%3A%2F%2Fasana.com&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.bRDJBM_7ci0.O%2Fm%3D__features__%2Fam%3DEQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCMQWfcLeLZsrj7F3isSD44W4ZvQxQ#rpctoken=863866344&amp;forcesecure=1" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><script type="text/javascript">
-$(function(){
-  // making email input focused by default
-  if (!AsanaHelpers.specialPlatform()) {
-    try{ $("#signup-email-home").focus(); } catch(e){}
-  }
-});
-</script>
-
-
-
-      
-<div id="login" class="dialog dialog--flow dialog--login" tabindex="61" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="71"></a>
-
-    
-
-    
-      <div class="dialog-header">
-        <h2>Log in</h2>
-      </div>
-
-      <div class="dialog-content">
-
-        
-        
-        
-
-        
-          <a class="button--oath button--center" href="title.html" title="Log In Using Google" tabindex="62"><span class="icon icon--oath"></span>Log In Using Google</a>
-
-          <div class="form--option">or</div>
-          <div id="loginForm-modal-login">
-  <form action="title.html/app/asana/-/login" method="post" id="login-form-modal-login" onsubmit="AsanaHelpers.addXsrfToken(this)">
-    <input type="hidden" name="u" value="title.html" autocomplete="off">
-    <input type="hidden" name="i" value="password" autocomplete="off">
-    <input type="hidden" name="src" value="login" autocomplete="off">
-    <input type="hidden" name="from_static" value="1" autocomplete="off">
-    <input type="hidden" name="auth" autocomplete="off">
-    <label for="login-email-modal-login">Email Address</label>
-    <input id="login-email-modal-login" class="" tabindex="63" name="e" type="email" placeholder=" name@company.com" autocomplete="off">
-    <div class="error-message-container">
-      <div id="login-email-modal-login-not-valid" class="error-message" style="display:none">
-        Oops, looks like that’s not a valid email.
-      </div>
-    </div>
-    <label for="login-password-modal-login">Password</label>
-    <input id="login-password-modal-login" class="" tabindex="64" name="p" type="password" placeholder="Password" autocomplete="off">
-    <p class="input--help"><a onclick="AsanaHelpers.pushEventToGA(['Login', 'ForgotPassword', 'modal-login']);" href="title.html" tabindex="65">Forgot your password?</a></p>
-
-    <input type="submit" id="login-submit-modal-login" class="button" tabindex="66" href="title.html" title="Try Asana" value="Log In" autocomplete="off">
-  </form>
-
-</div>
-
-
-        
-      </div>
-
-      </div>
-</div>
-
-      
-<div id="signup" class="dialog dialog--flow dialog--signup" tabindex="70" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="80"></a>
-
-    
-
-    
-      <div class="dialog-header">
-        <h2>Sign Up</h2>
-      </div>
-
-      <div class="dialog-content">
-
-        
-                  <p class="p--center">Please use your work email address, so we can connect you with your team in Asana.</p>
-        
-        
-
-        
-          <form id="signup-form-modal-signup" class="signupForm signupForm--modal-signup" onsubmit="AsanaHelpers.signupWithEmail($('#signup-email-modal-signup'));return false;">
-  <input type="hidden" name="name" value="" autocomplete="off">
-  <label for="signup-email-modal-signup">Email Address</label>
-  <input id="signup-email-modal-signup" class="input--email" tabindex="72" placeholder="name@company.com" name="email" type="email" autocomplete="off">
-
-  <!-- two checks, the first to see if we've already asked for a work email, the second has an alternate CTA without "Free" -->
-
-  <button id="signup-submit-modal-signup" class="" tabindex="73" onclick="AsanaHelpers.signupWithEmail($('#signup-email-modal-signup'));return false;" title="Sign Up">Sign Up</button>
-
-  <div class="error-message-container">
-    <div id="signup-email-modal-signup-not-valid" class="error-message" style="display:none">
-      <div class="icon icon--alert"></div>
-      Oops, looks like that’s not a valid email.
-    </div>
-  </div>
-</form>
-
-<script type="text/javascript">
-$(function(){
-  $("#signup-submit-modal-signup").keyup(function(event){
-    if (event.keyCode == 13){
-      $("#signup-submit-modal-signup").click();
-    }
-  });
-  $("#signup-email-modal-signup").on("keydown", function() {
-    var $this = $(this);
-    $this.addClass("active");
-    $("#signup-email-modal-signup-not-valid").fadeOut(500);
- });
- $("#signup-email-modal-signup").on("keyup", function() {
-    var $this = $(this);
-    if (!$this.val().length) {
-      $this.removeClass("active");
-    }
-  });
-});
-</script>
-
-<div class="form-replacement-buttons-mobile">
-   <!-- MOBILE DOWNLOAD BUTTONS 
-  <div class="visible-android">
-    <a href="https://play.google.com/store/apps/details?id=com.asana.app" onclick="AsanaHelpers.pushEventToGA(['Download', 'Android', 'Premium']);" class="app-store-button">
-        <img src="https://luna1.co/download-google-play.svg" alt="Download App Button" title="Download App">
-    </a>
-  </div>
-
-  <div class="visible-ios">
-    <a href="https://itunes.apple.com/us/app/asana-mobile/id489969512?mt=8" onclick="AsanaHelpers.pushEventToGA(['Download', 'iOS', 'Premium']);" class="app-store-button">
-        <img src="https://luna1.co/download-app-store.svg" alt="Download App Button" title="Download App">
-    </a>
-  </div>
-  -->
-</div>
-
-
-          <div class="visible-logged-in">
-            <a href="title.html" class="button">Go to Asana</a>
-          </div>
-
-        
-      </div>
-
-      </div>
-</div>
-
-      
-<div id="get-started" class="dialog dialog--flow dialog--signup" tabindex="4000" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="4010"></a>
-
-    
-
-    
-      <div class="dialog-header">
-        <h2>Sign Up</h2>
-      </div>
-
-      <div class="dialog-content">
-
-        
-                  <p class="p--center">Please use your work email address, so we can connect you with your team in Asana.</p>
-        
-        
-
-        
-          <form id="signup-form-modal-get-started" class="signupForm signupForm--modal-get-started  hidden-ios hidden-android hidden-logged-in" onsubmit="AsanaHelpers.signupWithEmail($('#signup-email-modal-get-started'));return false;">
-  <input type="hidden" name="name" value="" autocomplete="off">
-  <label for="signup-email-modal-get-started">Email Address</label>
-  <input id="signup-email-modal-get-started" class="input--email" tabindex="4002" placeholder="name@company.com" name="email" type="email" autocomplete="off">
-
-  <!-- two checks, the first to see if we've already asked for a work email, the second has an alternate CTA without "Free" -->
-
-  <button id="signup-submit-modal-get-started" class="" tabindex="4003" href="title.html" title="Sign Up">Join. It's Free.</button>
-
-  <div class="error-message-container">
-    <div id="signup-email-modal-get-started-not-valid" class="error-message" style="display:none">
-      <div class="icon icon--alert"></div>
-      Oops, looks like that’s not a valid email.
-    </div>
-  </div>
-</form>
-
-<script type="text/javascript">
-$(function(){
-  $("#signup-submit-modal-get-started").keyup(function(event){
-    if (event.keyCode == 13){
-      $("#signup-submit-modal-get-started").click();
-    }
-  });
-  $("#signup-email-modal-get-started").on("keydown", function() {
-    var $this = $(this);
-    $this.addClass("active");
-    $("#signup-email-modal-get-started-not-valid").fadeOut(500);
- });
- $("#signup-email-modal-get-started").on("keyup", function() {
-    var $this = $(this);
-    if (!$this.val().length) {
-      $this.removeClass("active");
-    }
-  });
-});
-</script>
-
-<div class="form-replacement-buttons-mobile">
-   <!-- MOBILE DOWNLOAD BUTTONS
-  <div class="visible-android">
-    <a href="https://play.google.com/store/apps/details?id=com.asana.app" onclick="AsanaHelpers.pushEventToGA(['Download', 'Android', 'Premium']);" class="app-store-button">
-        <img src="https://luna1.co/download-google-play.svg" alt="Download App Button" title="Download App">
-    </a>
-  </div>
-
-  <div class="visible-ios">
-    <a href="https://itunes.apple.com/us/app/asana-mobile/id489969512?mt=8" onclick="AsanaHelpers.pushEventToGA(['Download', 'iOS', 'Premium']);" class="app-store-button">
-        <img src="https://luna1.co/download-app-store.svg" alt="Download App Button" title="Download App">
-    </a>
-  </div>
-   -->
-</div>
-
-
-          <div class="visible-logged-in">
-            <a href="title.html" class="button">Go to Asana</a>
-          </div>
-
-        
-      </div>
-
-      </div>
-</div>
-
-      
-<div id="verify" class="dialog dialog--flow dialog--verify" tabindex="7000" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="7010"></a>
-
-    
-
-    
-      <div class="dialog-header">
-        <h2>Enter a work email address</h2>
-      </div>
-
-      <div class="dialog-content">
-
-        
-                  <p class="p--center"><span class="verify-this-email">This email</span> looks like a personal email address. If you want to be connected with your team, please use your work email address.</p>
-        
-        
-
-        
-
-            <!-- send the email here for signup use -->
-            <input id="verify-this-email" type="email" class="hidden" autocomplete="off">
-
-            <a class="button button--center" href="#signup" onclick="$('#signup-email-modal-signup').val('');" title="Send Verification Email" tabindex="7002">Enter a work email address</a>
-            <br>
-            <p class="secondary-actions">
-              <a class="link--secondary" onclick="$('#explain-why').show()">Why are we asking?</a>
-              <a onclick="AsanaHelpers.signupWithEmail($('#verify-this-email'), true);">Continue with my email</a>
-            </p>
-
-            </div>
-
-            <div class="dialog-footer" id="explain-why" style="display:none;">
-              <p class="footnote">Asana is built for teams to track their work, and the only way to auto-connect with other people in your company is by signing up with your work email address. <a href="/guide/team/onboard/adding-people" target="_blank">Learn more</a></p>
-
-        
-      </div>
-
-      </div>
-</div>
-
-      
-<div id="loading" class="dialog dialog--flow dialog--loading" tabindex="9000" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="9010"></a>
-
-    
-
-    
-      <div class="dialog-header">
-        <h2></h2>
-      </div>
-
-      <div class="dialog-content">
-
-        
-        
-        
-
-                  <div class="dialog-content--loader">
-            <div class="loading-indicator loadingIndicator-rotator">
-              <div class="loadingIndicator-dot"></div>
-            </div>
-          </div>
-        
-      </div>
-
-      </div>
-</div>
-
-      
-<div id="signup-failed" class="dialog dialog--flow dialog--signup-failed" tabindex="10000" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="10010"></a>
-
-    
-
-    
-      <div class="dialog-header">
-        <h2>Oops, we couldn’t sign you up!</h2>
-      </div>
-
-      <div class="dialog-content">
-
-        <div class="oops"></div> 
-                  <p class="p--center">We tried, but there was a problem creating your account. Please close this window and try again!</p>
-        
-        
-
-        
-      </div>
-
-      </div>
-</div>
-
-      
-<div id="existing-account" class="dialog dialog--flow dialog--existing-account" tabindex="8000" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="8010"></a>
-
-    
-
-    
-      <div class="dialog-header">
-        <h2>Hey there, we’ve already met!</h2>
-      </div>
-
-      <div class="dialog-content">
-
-        
-        
-        
-
-        
-          <div id="login-already-have-account-oath" class="" style="display:none;">
-            <p>Looks like you already have an account. Welcome back. Please sign in with your Google account.</p>
-            <button class="button--oath button--center" href="title.html" title="Log In Using Google" tabindex="4001"><span class="icon icon--oath"></span>Log In Using Google</button>
-
-          </div>
-
-          <div id="login-already-have-account-email" class="" style="display:none;">
-            <p>Looks like you already have an account. Welcome back. Please enter your password.</p>
-            <div id="loginForm-existing-account-modal">
-  <form action="title.html" method="post" id="login-form-existing-account-modal" onsubmit="AsanaHelpers.addXsrfToken(this)">
-    <input type="hidden" name="u" value="title.html/" autocomplete="off">
-    <input type="hidden" name="i" value="password" autocomplete="off">
-    <input type="hidden" name="src" value="login" autocomplete="off">
-    <input type="hidden" name="from_static" value="1" autocomplete="off">
-    <input type="hidden" name="auth" autocomplete="off">
-    <label for="login-email-existing-account-modal">Email Address</label>
-    <input id="login-email-existing-account-modal" class="" tabindex="4002" name="e" type="email" placeholder=" name@company.com" autocomplete="off">
-    <div class="error-message-container">
-      <div id="login-email-existing-account-modal-not-valid" class="error-message" style="display:none">
-        Oops, looks like that’s not a valid email.
-      </div>
-    </div>
-    <label for="login-password-existing-account-modal">Password</label>
-    <input id="login-password-existing-account-modal" class="" tabindex="4003" name="p" type="password" placeholder="Password" autocomplete="off">
-    <p class="input--help"><a onclick="AsanaHelpers.pushEventToGA(['Login', 'ForgotPassword', 'existing-account-modal']);" href="title.html" tabindex="4004">Forgot your password?</a></p>
-
-    <input type="submit" id="login-submit-existing-account-modal" class="button" tabindex="4005" href="title.html" title="Try Asana" value="Log In" autocomplete="off">
-  </form>
-
-</div>
-
-          </div>
-
-        
-      </div>
-
-      </div>
-</div>
-
-      
-<div id="addAsana" class="dialog  dialog--addAsana" tabindex="7000" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="7010"></a>
-
-    
-
-    
-              <div class="dialog-header">
-    			<h2>Add link to</h2>
-
-    			<select class="input--unstyled addAsana-workspaces" id="addAsana-workspaces" required="">
-    				<option value="workspace">workspace</option>
-    			</select>
-
-    			<a href="#close" class="dialog-close icon icon--x"></a>
-
-    			<div class="message message--error">
-    				<p><strong>Error:</strong> Please select a workspace before adding link.</p>
-    			</div>
-    		</div>
-
-    		<div class="dialog-content dialog-content--success">
-    			<div class="addAsana-success">
-    				<span class="icon icon--check"></span>
-    			</div>
-    		</div>
-
-    		<div class="dialog-content dialog-content--loader">
-    			<div class="loading-indicator loadingIndicator-rotator">
-    				<div class="loadingIndicator-dot"></div>
-    			</div>
-    		</div>
-
-    		<div class="dialog-content dialog-content--form">
-    			<form class="task-form" action="">
-    				<label for="task-name">Task Name</label>
-    				<input type="text" name="task-name" placeholder="Article title" id="addAsana-taskName" autocomplete="off">
-
-    				<label for="task-description">Description</label>
-    				<textarea type="text" class="addAsana-taskDescription" name="task-description" placeholder="Article description" id="addAsana-taskDescription"></textarea>
-
-            <br>
-
-    				<input type="submit" id="addAsana-submit" class="button button--primary" value="Add Link to Asana" autocomplete="off">
-    			</form>
-    		</div>
-            </div>
-</div>
-
-      
-<div id="unsupported-browser" class="dialog  dialog--unsupported-browser" tabindex="7500" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="7510"></a>
-
-    
-
-    
-      
-        <!-- normal text modal w/optional header/footer -->
-                  <div class="dialog-header">
-            <h3>Sorry, we don’t support this browser</h3>
-
-            <a href="#close" class="dialog-close icon icon--x"></a>
-          </div>
-        
-        <div class="dialog-content">
-                      <p>Asana doesn’t work with the internet browser you are currently using. Please sign up using one of these <a href="/guide/help/faq/browsers">supported browsers</a> instead.</p>
-                  </div>
-
-                    </div>
-</div>
-
-  
-
-
-      
-<div id="get-started" class="dialog  dialog--signup get-started" tabindex="500" data-swiftype-index="false">
-  <a href="#close" class="dialog-close dialog-close-background"></a>
-  <div class="dialog-container">
-    <a href="#close" class="dialog-close icon icon--x" tabindex="510"></a>
-
-    
-
-    
-      
-        <!-- normal text modal w/optional header/footer -->
-                  <div class="dialog-header">
-            <h3>Ready to get started?</h3>
-
-            <a href="#close" class="dialog-close icon icon--x"></a>
-          </div>
-        
-        <div class="dialog-content">
-                      <p>Please use your work address, so you can join your team in Asana.</p>
-                  </div>
-
-                    </div>
-</div>
-
-  <script>
-  $(document).ready (function){
-  
- var hoverObject = document.getElementsByClassName("footer-column--logo");
-  
-  $("logoBW").click(
-    
-    document.getElementById("logoBW").style.display="none";
-    
-    console.log("yup");
-    );
-    
-  }
-  
-</script>
-
-
-<iframe id="apiproxy5a133c156a0033dfa361445e49b3ce14277420110.2919656817413454" name="apiproxy5a133c156a0033dfa361445e49b3ce14277420110.2919656817413454" src="https://content.googleapis.com/static/proxy.html?jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.bRDJBM_7ci0.O%2Fm%3D__features__%2Fam%3DEQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCMQWfcLeLZsrj7F3isSD44W4ZvQxQ#parent=https%3A%2F%2Fasana.com&amp;rpctoken=239603046" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><script type="text/javascript" id="" src="https://r1-t.trackedlink.net/_dmpt.js"></script><script type="text/javascript" id="">setTimeout(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0031/2742.js?"+Math.floor((new Date).getTime()/36E5);a.async=!0;a.type="text/javascript";b.parentNode.insertBefore(a,b)},1);</script>
-<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","//connect.facebook.net/en_US/fbevents.js");fbq("init","1641293582765384");fbq("track","PageView");</script>
-<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1641293582765384&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
-<script type="text/javascript" id="twttr-retarg-js" src="//platform.twitter.com/oct.js"></script><script type="text/javascript" id="">function getCookie(a){a=new RegExp(a+"\x3d([^;]+)");a=a.exec(document.cookie);return null!==a?unescape(a[1]):null}var asanaAttrCookie=JSON.parse(getCookie("asana_attr"));NaN_api=[[463571,asanaAttrCookie.nan_id],["visit","landing"]];(function(){var a=document.createElement("script");a.async=!0;a.src="//cdn.nanigans.com/NaN_tracker.js";var b=document.getElementsByTagName("head")[0];b.appendChild(a)})();</script><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;"></iframe>
-<script type="text/javascript" id="">_dmSetDomain("asana.com");</script></body></html>
+  </body>
+</html>
