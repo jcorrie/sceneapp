@@ -168,7 +168,7 @@
 </head>
 
 <body class="page--home" data-gr-c-s-loaded="true">
-  <header id="header" class="siteHeader" role="banner" style="">
+  <header id="header" class="siteHeader" role="banner" style="background:#F5F5F5 !important;">
   <div class="container">
     <div class="row">
       <div class="col-xsmall-12">
@@ -182,8 +182,8 @@
         
       <div class="siteHeader-buttons">
         <div class="hidden-logged-in">
-          <a href="#signup" class="button signup-dialog-button" title="Join. It's Free." tabindex="2">Join. It's Free.</a>
-          <a id="login-button" href="title.html" class="button button--secondary" title="Log In" tabindex="3">Log In</a>
+          <a href="title.html" class="button signup-dialog-button hidden-xsmall" title="Join. It's Free." tabindex="2">Join. It's Free.</a>
+          <a id="login-button" href="title.html" class="button button--secondary hidden-xsmall" title="Log In" tabindex="3">Log In</a>
         </div>
         <div class="visible-logged-in">
           <a class="button" title="Go to Asana" href="title.html" tabindex="1"> Go to Scene</a>
@@ -200,17 +200,17 @@
 
       <div class="siteHeader-mobile-menu" style="margin-right: 20px; width: 20vw;">
      
-     
-     
-           <div class="" style="margin: auto; display: block; margin-top: 8px;" >
+      <div class="" style="margin: auto; display: block; margin-top: 8px;" >
 
     
-          <a id="login-button" style="padding-left:0px ; display:block; width: inherit; text-align: center; padding-right:0px;" href="title.html" class="button button--secondary" title="Log In" tabindex="3">Log In</a>
+          <a id="login-button" style="padding-left:0px ; display:block; width: inherit; text-align: center; padding-right:0px;" href="title.html" class="button button--secondary hidden-medium hidden-large hidden-xlarge hidden-small" title="Log In" tabindex="3">Log In</a>
        
         <div class="visible-logged-in">
           <a class="button" title="Go to Asana" href="title.html" tabindex="1"> Go to Scene</a>
         </div>
       </div>
+     
+          
      <!-- kill hamburger
    
           
@@ -256,7 +256,7 @@
 
   <!-- two checks, the first to see if we've already asked for a work email, the second has an alternate CTA without "Free" -->
 
-  <button id="signup-submit-home" class="" tabindex="13" onclick="AsanaHelpers.signupWithEmail($('#signup-email-home'));return false;" title="Sign Up">Join. It's Free.</button>
+  <a id="signup-submit-home" class="button" tabindex="13" href="title.html" title="Sign Up" style="width: auto;">Join. It's Free.</a>
 
   <div class="error-message-container">
     <div id="signup-email-home-not-valid" class="error-message" style="display:none">
@@ -348,6 +348,10 @@ $(function(){
 </div>
 
 
+                          <div class="customer equal-float-candidate" style="height: auto;">
+  <img class="equal-elem" src="catLogo.png" alt="Cat Logo" title="Cat Logo" style="height: 0px;" data-eqh-postop="0">
+</div>
+
          
 
 
@@ -392,7 +396,7 @@ $(function(){
                   <div class="innerContent">
                       <p class="p--large">They know what <nobr>it takes</nobr> to <span style="color: #E91E63">#beScene</span>. Do you?</p>       
                          <br>   
-                       <a class="button button--secondary" href="/customers">Hear what they say</a>
+                       <a class="button button--secondary" href="community.html">Hear what they say</a>
                 
             
                   </div>
@@ -407,14 +411,14 @@ $(function(){
       <div class="text-container">
         <h2 class="slide-title">Share your portfolio. Browse the feed. Join your dream project. </h2>
         <p class="p--large">Scene is built by us with love for you. It's not an app. It's a new home for your community.</p>
-        <a class="button button--secondary button--background" href="/product">Learn More</a>
+        <a class="button button--secondary button--background" href="title.html">Learn More</a>
       </div>
       <div class="screenshot-container">
         <img src="https://luna1.co/04bcb6.png" id="not-an-img" class="placeholder" alt="placeholder image" title="">
         <span>
-                <img class="screenshots active" id="screenshot-1" src="projectDemo.png" alt="Screenshot" title="Screenshot" style="display: block; overflow: hidden;">
-                <img class="screenshots" id="screenshot-2" src="profileDemo.png" alt="Screenshot" title="Screenshot" style="display: none; overflow: hidden;">
-                <img class="screenshots" id="screenshot-3" src="gigsDemo.png" alt="Screenshot" title="Screenshot" style="display: none; overflow: hidden;">
+                <img class="screenshots active" id="screenshot-1" src="demoScreenshot1.png" alt="Screenshot" title="Screenshot" style="display: block; overflow: hidden;">
+                <img class="screenshots" id="screenshot-2" src="demoScreenshot2.png" alt="Screenshot" title="Screenshot" style="display: none; overflow: hidden;">
+                <img class="screenshots" id="screenshot-3" src="demoScreenshot3.png" alt="Screenshot" title="Screenshot" style="display: none; overflow: hidden;">
         
         </span>
       </div>
@@ -465,7 +469,7 @@ $(function(){
 
   <!-- two checks, the first to see if we've already asked for a work email, the second has an alternate CTA without "Free" -->
 
-  <button id="signup-submit-prefooter-laptop-cta" class="" tabindex="13" onclick="AsanaHelpers.signupWithEmail($('#signup-email-prefooter-laptop-cta'));return false;" title="Sign Up">Join. It's Free.</button>
+  <a id="signup-submit-prefooter-laptop-cta" class="button" tabindex="13"  title="Sign Up" style="width:auto; margin-top: 5px;">Join. It's Free.</a>
 
   <div class="error-message-container">
     <div id="signup-email-prefooter-laptop-cta-not-valid" class="error-message" style="display:none">
@@ -628,7 +632,7 @@ $(function(){
       <div class="dialog-content">
 
         
-                  <p class="p--center">Sign up. Be Scene.</p>
+                  <p class="p--center">Sign up and we'll have you up and running in minutes.</p>
         
         
 
@@ -636,11 +640,11 @@ $(function(){
           <form id="signup-form-modal-signup" class="signupForm signupForm--modal-signup" onsubmit="AsanaHelpers.signupWithEmail($('#signup-email-modal-signup'));return false;">
   <input type="hidden" name="name" value="" autocomplete="off">
   <label for="signup-email-modal-signup">Email Address</label>
-  <input id="signup-email-modal-signup" class="input--email" tabindex="72" placeholder="name@company.com" name="email" type="email" autocomplete="off">
+  <input id="signup-email-modal-signup" class="input--email" tabindex="72" placeholder="you@yours.com" name="email" type="email" autocomplete="off">
 
   <!-- two checks, the first to see if we've already asked for a work email, the second has an alternate CTA without "Free" -->
 
-  <button id="signup-submit-modal-signup" class="" tabindex="73" onclick="AsanaHelpers.signupWithEmail($('#signup-email-modal-signup'));return false;" title="Sign Up">Sign Up</button>
+  <a id="signup-submit-modal-signup" class="button" tabindex="73" href="title.html" style="width: auto;">Sign Up</a>
 
   <div class="error-message-container">
     <div id="signup-email-modal-signup-not-valid" class="error-message" style="display:none">
@@ -661,11 +665,14 @@ $(function(){
     var $this = $(this);
     $this.addClass("active");
     $("#signup-email-modal-signup-not-valid").fadeOut(500);
+   
  });
  $("#signup-email-modal-signup").on("keyup", function() {
+    
     var $this = $(this);
     if (!$this.val().length) {
       $this.removeClass("active");
+     
     }
   });
 });
@@ -714,7 +721,7 @@ $(function(){
       <div class="dialog-content">
 
         
-                  <p class="p--center">Sign up. Be Scene.</p>
+                  <p class="p--center">Please use your work email address, so we can connect you with your team in Asana.</p>
         
         
 
@@ -1038,7 +1045,7 @@ $(function(){
           </div>
         
         <div class="dialog-content">
-                      <p>Sign up. Be Scene.</p>
+                      <p>Please use your work address, so you can join your team in Asana.</p>
                   </div>
 
                     </div>
