@@ -35,7 +35,7 @@ document.getElementById("loading").style.display = "none";
         // Creating the "about us" pop up
 
     var dialog = document.querySelector('dialog');
-    var dialogPolyfill = {};
+   
     var showDialogButton = document.querySelector('#show-help');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
